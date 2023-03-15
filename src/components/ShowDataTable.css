@@ -1,0 +1,23 @@
+table{
+    width: 100%;
+    color: white;
+    margin-top: 60px;
+    padding-top: 0px;
+    /* border: 1px solid; */
+    border-collapse: collapse;
+}
+
+table td{
+    /* border: 2px solid #2c3f50; */
+    border-collapse: collapse;
+    border: 2px solid #ffffff;
+    padding: 15px;
+}
+
+table th{
+    border: 2px solid #ffffff;
+    padding: 15px;
+    text-align: left;
+    font-weight: 800;
+    font-size: 20px;
+}
