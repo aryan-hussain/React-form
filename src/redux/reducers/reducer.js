@@ -1,14 +1,44 @@
-import { ActionTypes } from "../constants/actions-types";
+import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = {
-    data : {},
-}
+// const initialState = {
+//     location: ['Bangalore', 'Hyderabad', 'Delhi'],
+// };
 
-export const dataReducer = (state = initialState, { type, payload}) => {
-    switch (type ) {
-        case ActionTypes.SET_PRODUCTS:
-            return {...state, data:payload};
-        default:
-            return state;
-    }
-}
+const userSlice = createSlice({
+    name: "users",
+    initialState: {
+        users: [],
+    },
+    reducers: {
+        dataReducer: (state, payload) => {
+            console.log("payload", payload)
+            state.users = [...state.users];
+            state.users.push(payload.payload);
+        }
+
+    },
+});
+
+const { actions, reducer } = userSlice
+export const { dataReducer } = actions;
+
+export default reducer;
+
+
+
+// import { createSlice } from '@reduxjs/toolkit';
+// const locationSlice = createSlice({
+//     name: "location",
+//     initialState: {
+//         location: ['Bangalore', 'Hyderabad', 'Delhi'],
+//     },
+//     reducers: {
+//         save: (state, param) => {
+//             console.log(param.payload)
+//             state.location.push(param.payload);
+//         },
+//     }
+// });
+// const { actions, reducer } = locationSlice
+// export const { save } = actions;
+// export default reducer;
